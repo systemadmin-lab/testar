@@ -81,9 +81,9 @@ export default function ClientTestimonials() {
                 style={{
                     width: '504px',
                     height: '264px',
-                    borderRadius: '16px', // Tweaked to 16px to match video cards usually, requested user didn't specify radius but layout implies rounded
+                    borderRadius: '0px',
                     padding: '24px',
-                    background: 'rgba(255, 255, 255, 0.1)',
+                    background: 'rgba(247, 247, 247, 0.1)',
                     gap: '24px',
                 }}
             >
