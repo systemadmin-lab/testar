@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: oklch(0.1 0.02 240);
+  --foreground: oklch(0.9 0.02 240);
+  --card: oklch(0.14 0.03 240);
+  --card-foreground: oklch(0.9 0.02 240);
+  --popover: oklch(0.1 0.02 240);
+  --popover-foreground: oklch(0.9 0.02 240);
+  --primary: oklch(0.6 0.18 260);
+  --primary-foreground: oklch(0.98 0.01 240);
+  --secondary: oklch(0.25 0.04 240);
+  --secondary-foreground: oklch(0.9 0.02 240);
+  --muted: oklch(0.25 0.04 240);
+  --muted-foreground: oklch(0.7 0.04 240);
+  --accent: oklch(0.3 0.05 240);
+  --accent-foreground: oklch(0.9 0.02 240);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 240);
+  --border: oklch(0.25 0.04 240);
+  --input: oklch(0.25 0.04 240);
+  --ring: oklch(0.6 0.18 260);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-anuphan: var(--font-anuphan);
+
+  --animate-smooth-bounce: bounce 2s infinite;
+  --animate-subtle-pulse: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased selection:bg-primary/30 selection:text-white;
+  }
+
+  * {
+    @apply border-border;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/5;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-400 to-cyan-400;
+  }
 }
