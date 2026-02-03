@@ -1,6 +1,9 @@
 import Clients from "../components/Clients";
+import ClientTestimonials from "../components/ClientTestimonials";
+import FeaturedVideos from "../components/FeaturedVideos";
 import FeaturedWork from "../components/FeaturedWork";
 import GrowthEngine from "../components/GrowthEngine";
+import GrowthInsights from "../components/GrowthInsights";
 import GrowthSolutions from "../components/GrowthSolutions";
 import Landing from "../components/Landing";
 import OurProcess from "../components/OurProcess";
@@ -17,7 +20,11 @@ export default function HomePage() {
       <FeaturedWork />
       <Clients />
       <OurProcess />
+      <GrowthInsights />
+      <FeaturedVideos /> 
       <ReadyToElevate />
+    
+      <ClientTestimonials />
     </main>
   );
 }

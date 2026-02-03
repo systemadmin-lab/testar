@@ -1,10 +1,11 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Shield, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer 
-      style={{ backgroundColor: 'rgba(92, 8, 9, 1)' }}
+      style={{ backgroundColor: 'rgba(247, 247, 247, 0.1)' }}
       className="w-full text-white pt-24 pb-8"
     >
       <div 
@@ -14,11 +15,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           {/* Brand Column */}
           <div className="col-span-1">
-            <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center border border-white/20">
-                    <Shield className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold tracking-tight">Arcadeon</span>
+            <div className="flex items-center gap-[14px] mb-6">
+                <Image 
+                    src="/assets/header/mainlogo.svg" 
+                    alt="Arcedion Icon" 
+                    width={47} 
+                    height={47} 
+                    className="w-[47px] h-[47px]"
+                />
+                <Image 
+                    src="/assets/header/Arcediyon.svg" 
+                    alt="Arcedion Text" 
+                    width={127} 
+                    height={21} 
+                    className="w-[127px] h-[21px]"
+                />
             </div>
             <p className="text-white/80 leading-relaxed mb-8 text-sm">
               Helping ambitious brands tell their story and scale their impact through strategic growth partnerships.
