@@ -4,7 +4,25 @@ import { useInView, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-const projects = [
+
+interface Stat {
+  value: number;
+  prefix?: string;
+  suffix: string;
+  label: string;
+}
+
+interface Project {
+  id: string;
+  subtitle: string;
+  title: string;
+  quote: string;
+  stats: Stat[];
+  image: string;
+  reverse?: boolean;
+}
+
+const projects: Project[] = [
   {
     id: "01",
     subtitle: "Rebranding & Digital",
