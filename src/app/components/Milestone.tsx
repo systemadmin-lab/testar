@@ -17,6 +17,7 @@ const milestones = [
     title: "First Major Client",
     description: "Secured our first Fortune 500 partnership, proving our methodology works at enterprise scale. This pivotal moment defined our trajectory.",
     image: "/assets/milestone/Rectangle 126 (1).png",
+    label: "MILESTONE 2",
   },
   {
     year: "2022",
@@ -155,10 +156,23 @@ export default function Milestone() {
                                 viewport={{ once: true, margin: "-100px" }}
                             >
                                 <span className="text-[64px] font-light text-[#333333] leading-none mb-4 block" style={{ fontFamily: 'Aileron, sans-serif' }}>
-                                    {item.year.slice(0, 2)}<span className="text-white">{item.year.slice(2)}</span>
+                                    {item.year.slice(0, 2)}
+                                    <span className="text-white relative inline-block">
+                                        {item.year.slice(2)}
+                                        {/* Optional Label Overlay */}
+                                        {/* @ts-ignore */}
+                                        {item.label && (
+                                            <span 
+                                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10px] font-bold text-[#DA1316] tracking-widest uppercase"
+                                                style={{ whiteSpace: 'nowrap' }}
+                                            >
+                                                {item.label}
+                                            </span>
+                                        )}
+                                    </span>
                                 </span>
                                 <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                                <p className="text-[#B5B5B5] leading-relaxed max-w-md ml-0 float-right">
+                                <p className={`text-[#B5B5B5] leading-relaxed max-w-md ${isEven ? 'self-start text-left' : 'self-end text-left'}`}>
                                     {item.description}
                                 </p>
                             </motion.div>

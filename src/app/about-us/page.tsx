@@ -1,5 +1,8 @@
 import AboutLanding from "../components/AboutLanding";
 import CEOMessage from "../components/CEOMessage";
+import ClientTestimonials from "../components/ClientTestimonials";
+import FeaturedVideos from "../components/FeaturedVideos";
+import GrowthInsights from "../components/GrowthInsights";
 import Milestone from "../components/Milestone";
 import OurPrinciples from "../components/OurPrinciples";
 import ReadyToElevate from "../components/ReadyToElevate";
@@ -14,6 +17,10 @@ export default function AboutUsPage() {
       <Milestone />
       <OurPrinciples />
       <ReadyToElevate />
+      <FeaturedVideos />
+      <ClientTestimonials />
+      <GrowthInsights />
+      
     </main>
   );
 }
