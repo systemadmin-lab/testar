@@ -1,15 +1,35 @@
-"use client";
+import Image from "next/image";
 
 export default function AboutLanding() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-121px)] w-full py-20 pb-0">
-      <div className="max-w-[1240px] mx-auto text-center space-y-12">
+    <div 
+      className="relative flex flex-col items-center justify-center h-[940px] overflow-hidden"
+      style={{
+        width: 'calc(100% + 360px)', // 100% + left padding + right padding
+        marginLeft: '-180px',
+        marginRight: '-180px',
+      }}
+    >
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full z-[-1]">
+        <Image
+          src="/about-us.png"
+          alt="About Us Hero Background"
+          fill
+          priority
+          className="object-cover"
+          quality={100}
+        />
+        {/* Overlay for better text readability if needed */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      <div className="relative z-10 w-full max-w-[1560px] mx-auto text-center space-y-12">
         <h1 
-            className="text-[80px] leading-[1.2] tracking-[0.04em] text-center mb-6"
+            className="text-[80px] leading-[1.2] tracking-[0.04em] text-center mb-6 text-white"
             style={{ 
                 fontFamily: 'Aileron, sans-serif',
                 fontWeight: 700,
-                color: '#B5B5B5'
             }}
         >
           We Build <span className="text-[#DA1316]">Brands</span><br /> 
@@ -17,11 +37,10 @@ export default function AboutLanding() {
         </h1>
         
         <p 
-            className="text-[32px] leading-[1.3] text-center max-w-[1100px] mx-auto"
+            className="text-[32px] leading-[1.3] text-center max-w-[1100px] mx-auto text-white/90"
             style={{
                 fontFamily: 'Anuphan, sans-serif',
                 fontWeight: 400,
-                color: '#B5B5B5'
             }}
         >
           Founded on the belief that great marketing is a blend of art and science, 
@@ -29,7 +48,7 @@ export default function AboutLanding() {
         </p>
       </div>
 
-      <div className="mt-36 animate-bounce">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10">
         <svg 
           width="20" 
           height="123" 
@@ -39,7 +58,7 @@ export default function AboutLanding() {
         >
           <path 
             d="M10 0L10 121M10 121L1 111.5M10 121L19 111.5" 
-            stroke="#B5B5B5" 
+            stroke="white" 
             strokeWidth="2"
           />
         </svg>

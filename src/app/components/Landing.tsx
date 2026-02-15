@@ -2,7 +2,14 @@ import Image from "next/image";
 
 export default function Landing() {
   return (
-    <div className="relative flex flex-col items-center justify-center w-full h-[940px] overflow-hidden">
+    <div 
+      className="relative flex flex-col items-center justify-center h-[940px] overflow-hidden"
+      style={{
+        width: 'calc(100% + 360px)', // 100% + left padding + right padding
+        marginLeft: '-180px',
+        marginRight: '-180px',
+      }}
+    >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-[-1]">
         <Image
@@ -17,7 +24,7 @@ export default function Landing() {
         <div className="absolute inset-0 bg-black/10" /> 
       </div>
 
-      <div className="relative z-10 max-w-[1000px] mx-auto text-center space-y-12">
+      <div className="relative z-10 w-full max-w-[1560px] mx-auto text-center space-y-12">
         <h1 className="font-sans font-bold text-[80px] leading-[1.2] tracking-[0.04em] text-center text-white">
           We Build<br /> 
           <span className="text-[#DA1316]">Digital </span> 
