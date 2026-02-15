@@ -51,18 +51,16 @@ export default function OurPrinciples() {
             
             <Link href="/contact-us">
                 <button 
-                    className="
-                        px-8 py-4 
-                        border border-[#DA1316] 
-                        text-[#DA1316] 
-                        font-semibold 
-                        rounded-lg 
-                        hover:bg-[#DA1316] 
-                        hover:text-white 
-                        transition-all duration-300
-                    "
+                    className="group relative overflow-hidden border-2 border-[#DA1316] text-[#DA1316] rounded-lg text-base font-medium transition-colors duration-300"
+                    style={{
+                        width: '216px',
+                        height: '54px',
+                    }}
                 >
-                    Work With Us
+                    <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                        View More Info
+                    </span>
+                    <div className="absolute inset-0 bg-[#DA1316] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0" />
                 </button>
             </Link>
         </div>

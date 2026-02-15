@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header 
       className="w-full h-[121px] flex items-center justify-between border-b border-white/5 bg-transparent backdrop-blur-md fixed top-0 left-0 z-50 box-border"
@@ -12,7 +17,6 @@ export default function Header() {
         paddingRight: "180px",
       }}
     >
-      {/* Logo Section */}
       {/* Logo Section */}
       <div className="flex items-center gap-[14px] shrink-0">
          <Image 
@@ -39,15 +43,22 @@ export default function Header() {
           { label: "Work", href: "/work" },
           { label: "About us", href: "/about-us" },
           { label: "Contact Us", href: "/contact-us" },
-        ].map((item) => (
-          <Link 
-            key={item.label} 
-            href={item.href} 
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            {item.label}
-          </Link>
-        ))}
+        ].map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <Link 
+              key={item.label} 
+              href={item.href} 
+              className={`text-sm font-medium transition-colors ${
+                isActive 
+                  ? "text-[#DA1316]" 
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
 
       {/* CTA Button - 373px margin from nav */}
