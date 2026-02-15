@@ -8,7 +8,9 @@ export default function ReadyToElevate() {
       <div 
         className="flex flex-col items-center justify-center text-center bg-white/10 rounded-none relative overflow-hidden"
         style={{
-            width: '1560px',
+            width: 'calc(100% + 360px)',
+            marginLeft: '-180px',
+            marginRight: '-180px',
             height: '404px',
             paddingTop: '88px',
             paddingBottom: '88px',
