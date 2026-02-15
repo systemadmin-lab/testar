@@ -1,15 +1,30 @@
+import Image from "next/image";
 
 export default function Landing() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-121px)] w-full py-20">
-      <div className="max-w-[1000px] mx-auto text-center space-y-12">
-        <h1 className="font-sans font-bold text-[80px] leading-[1.2] tracking-[0.04em] text-center">
+    <div className="relative flex flex-col items-center justify-center w-full h-[940px] overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full z-[-1]">
+        <Image
+          src="/home1.png"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-cover"
+          quality={100}
+        />
+        {/* Overlay for better text readability if needed, currently transparent */}
+        <div className="absolute inset-0 bg-black/10" /> 
+      </div>
+
+      <div className="relative z-10 max-w-[1000px] mx-auto text-center space-y-12">
+        <h1 className="font-sans font-bold text-[80px] leading-[1.2] tracking-[0.04em] text-center text-white">
           We Build<br /> 
           <span className="text-[#DA1316]">Digital </span> 
           Experiences
         </h1>
         
-        <p className="font-sans font-normal text-[32px] leading-[1.3] text-center text-muted-foreground max-w-[900px] mx-auto">
+        <p className="font-sans font-normal text-[32px] leading-[1.3] text-center text-white/90 max-w-[900px] mx-auto">
           Transform your brand with cutting-edge technology, stunning motion design,
           and data-driven strategies that scale.
         </p>
@@ -28,7 +43,7 @@ export default function Landing() {
         </div>
       </div>
 
-      <div className="mt-24 animate-bounce">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10">
         <svg 
           width="20" 
           height="123" 
@@ -38,8 +53,8 @@ export default function Landing() {
         >
           <path 
             d="M10 0L10 121M10 121L1 111.5M10 121L19 111.5" 
-            stroke="#171717" 
-            className="stroke-foreground"
+            stroke="white" 
+            className="stroke-white"
             strokeWidth="2"
           />
         </svg>
