@@ -60,7 +60,7 @@ export default function Landing() {
           </div>
 
           {/* CTA Button */}
-          <button 
+          {/* <button 
             className="group relative overflow-hidden w-[216px] h-[54px] rounded-[8px] border-2 border-[#D62828] transition-colors duration-300"
           >
             <span 
@@ -72,7 +72,7 @@ export default function Landing() {
             >
               Explore Our Work
             </span>
-          </button>
+          </button> */}
         </div>
       </div>
 

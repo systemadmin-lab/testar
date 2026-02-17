@@ -1,33 +1,29 @@
+import MethodologyTimeline from "./digital-marketing/MethodologyTimeline";
 import OurExpertise from "./digital-marketing/OurExpertise";
-import OurMethodology from "./digital-marketing/OurMethodology";
 import ServiceHero from "./digital-marketing/ServiceHero";
 import WhyPartner from "./digital-marketing/WhyPartner";
 
-// Methodology steps data
+// Methodology steps data (Timeline format)
 const methodologySteps = [
   {
     number: "01",
-    title: "Research",
-    description: "Deep dive into your market, audience, and competitive landscape to uncover opportunities.",
-    gradientColors: ['#667eea', '#764ba2'] as [string, string], // Purple-blue
+    title: "Audit & Analysis",
+    description: "We start by analyzing your current digital footprint and identifying opportunities.",
   },
   {
     number: "02",
-    title: "Strategy",
-    description: "Develop data-driven roadmaps aligned with your business goals and growth objectives.",
-    gradientColors: ['#f093fb', '#f5576c'] as [string, string], // Pink-red
+    title: "Strategy Development",
+    description: "Creating a tailored roadmap aligned with your business goals.",
   },
   {
     number: "03",
     title: "Execution",
-    description: "Launch campaigns with precision timing, creative excellence, and technical expertise.",
-    gradientColors: ['#4facfe', '#00f2fe'] as [string, string], // Blue-cyan
+    description: "Implementing campaigns across chosen channels with precision.",
   },
   {
     number: "04",
-    title: "Analysis",
-    description: "Continuous monitoring and optimization to maximize ROI and scale what works.",
-    gradientColors: ['#43e97b', '#38f9d7'] as [string, string], // Green-teal
+    title: "Optimization",
+    description: "Continuous monitoring and tweaking to maximize performance.",
   },
 ];
 
@@ -86,7 +82,7 @@ export default function WorkPage() {
         backgroundImage="/servicehero.png"
       />
       
-      <OurMethodology steps={methodologySteps} />
+     
       
       <WhyPartner
         tagline="OVERVIEW"
@@ -103,6 +99,8 @@ export default function WorkPage() {
       />
       
       <OurExpertise services={expertiseServices} />
+
+      <MethodologyTimeline steps={methodologySteps} />
     </main>
   );
 }
