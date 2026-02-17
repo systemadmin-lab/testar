@@ -82,13 +82,13 @@ export default function Milestone() {
         <div ref={containerRef} className="relative">
              {/* Central Line - Static White */}
              <div 
-                className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 bg-white"
+                className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 bg-white"
                 style={{ width: '1px' }} 
              />
 
              {/* Animated Red Scroll Follower Circle */}
              <motion.div 
-                className="absolute left-1/2 -translate-x-1/2 bg-[#DA1316] rounded-full z-20 shadow-[0_0_10px_rgba(218,19,22,0.8)]"
+                className="hidden lg:block absolute left-1/2 -translate-x-1/2 bg-[#DA1316] rounded-full z-20 shadow-[0_0_10px_rgba(218,19,22,0.8)]"
                 style={{
                     width: '16px',
                     height: '16px',
@@ -101,7 +101,7 @@ export default function Milestone() {
                 {milestones.map((item, index) => {
                     const isEven = index % 2 === 0;
                     return (
-                        <div key={index} className={`flex items-center justify-between w-full ${isEven ? 'flex-row' : 'flex-row-reverse'}`}>
+                        <div key={index} className={`flex items-center justify-between w-full flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-0`}>
                             {/* Image Side */}
                             <motion.div 
                                 className="relative overflow-hidden rounded-lg shrink-0"
@@ -137,7 +137,7 @@ export default function Milestone() {
                             </motion.div>
 
                             {/* Center Marker Dot (Static on the line) */}
-                            <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
+                            <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center">
                                 <div 
                                     className="rounded-full bg-black border border-white z-10"
                                     style={{
@@ -149,7 +149,7 @@ export default function Milestone() {
 
                             {/* Text Side */}
                             <motion.div 
-                                className={`flex flex-col justify-center w-[682px] ${isEven ? 'pl-16 text-left' : 'pr-16 text-right'}`}
+                                className={`flex flex-col justify-center w-full lg:w-[682px] ${isEven ? 'lg:pl-16 text-left' : 'lg:pr-16 lg:text-right text-left'}`}
                                 initial={{ opacity: 0, x: isEven ? 50 : -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, delay: 0.3 }}

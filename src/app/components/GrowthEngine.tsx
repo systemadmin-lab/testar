@@ -77,7 +77,7 @@ const nodes = [
 export default function GrowthEngine() {
   return (
     <section className="w-full py-40 flex flex-col items-center bg-black overflow-hidden relative">
-      <div className="w-full max-w-[1560px] relative h-[800px] flex items-center justify-center">
+      <div className="w-full max-w-[1560px] relative h-auto lg:h-[800px] flex flex-col lg:flex-row items-center justify-center">
         
         {/* Title */}
         <div className="absolute top-0 left-0">
@@ -87,13 +87,27 @@ export default function GrowthEngine() {
           <div className="w-[120px] h-1 bg-[#B59F7A]" />
         </div>
 
-        {/* Center Node: Growth Engine */}
+        {/* Mobile Grid Layout - visible only on mobile/tablet */}
+        <div className="lg:hidden w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12 px-4">
+          {nodes.map((node) => (
+            <div
+              key={`mobile-${node.id}`}
+              className="flex items-center gap-3 px-5 py-4 bg-[#0A0A0A] border border-white/10 rounded-lg"
+              style={{ borderColor: `${node.color}40`, boxShadow: `0 0 15px ${node.color}15` }}
+            >
+              <node.icon className="w-5 h-5" style={{ color: node.color }} />
+              <span className="text-white font-medium text-base">{node.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Center Node: Growth Engine (desktop only) */}
         <motion.div
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="absolute z-20 flex items-center justify-center w-48 h-48 rounded-full bg-black border border-red-900/50 shadow-[0_0_60px_rgba(139,0,0,0.4)]"
+            className="hidden lg:flex absolute z-20 items-center justify-center w-48 h-48 rounded-full bg-black border border-red-900/50 shadow-[0_0_60px_rgba(139,0,0,0.4)]"
         >
             <div className="text-center">
                 <div className="text-xs font-bold tracking-widest text-white/50 mb-1">GROWTH</div>
@@ -101,8 +115,8 @@ export default function GrowthEngine() {
             </div>
         </motion.div>
 
-        {/* Single SVG for all connection lines */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-10">
+        {/* Single SVG for all connection lines (desktop only) */}
+        <svg className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none overflow-visible z-10">
           <g style={{ transform: "translate(50%, 50%)" }}>
             {nodes.map((node, i) => (
               <motion.line
@@ -123,7 +137,7 @@ export default function GrowthEngine() {
           </g>
         </svg>
 
-        {/* Node Cards */}
+        {/* Node Cards (desktop only) */}
         {nodes.map((node, i) => (
             <motion.div
                 key={node.id}
@@ -131,7 +145,7 @@ export default function GrowthEngine() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 1.5 + (i * 0.1) }}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 px-6 py-4 bg-[#0A0A0A] border border-white/10 rounded-lg shadow-lg whitespace-nowrap z-30" // Added z-30
+                className="hidden lg:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 items-center gap-3 px-6 py-4 bg-[#0A0A0A] border border-white/10 rounded-lg shadow-lg whitespace-nowrap z-30" // Added z-30
                 style={{ 
                     marginLeft: `${node.position.x}px`, 
                     marginTop: `${node.position.y}px`,

@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function AboutLanding() {
   return (
     <div 
-      className="relative flex flex-col items-center justify-center h-[940px] overflow-hidden"
+      className="relative flex flex-col items-center justify-center h-[580px] md:h-[820px] lg:h-[1061px] -mt-[80px] lg:-mt-[121px] pt-[80px] lg:pt-[121px] overflow-hidden"
       style={{
         width: 'calc(100% + 360px)', // 100% + left padding + right padding
         marginLeft: '-180px',
@@ -26,7 +26,7 @@ export default function AboutLanding() {
 
       <div className="relative z-10 w-full max-w-[1560px] mx-auto text-center space-y-12">
         <h1 
-            className="text-[80px] leading-[1.2] tracking-[0.04em] text-center mb-6 text-white"
+            className="text-[32px] md:text-[56px] lg:text-[80px] leading-[1.2] tracking-[0.04em] text-center mb-6 text-white"
             style={{ 
                 fontFamily: 'Aileron, sans-serif',
                 fontWeight: 700,
@@ -37,7 +37,7 @@ export default function AboutLanding() {
         </h1>
         
         <p 
-            className="text-[32px] leading-[1.3] text-center max-w-[1100px] mx-auto text-white/90"
+            className="text-[18px] md:text-[24px] lg:text-[32px] leading-[1.3] text-center max-w-[1100px] mx-auto text-white/90 px-4 lg:px-0"
             style={{
                 fontFamily: 'Anuphan, sans-serif',
                 fontWeight: 400,

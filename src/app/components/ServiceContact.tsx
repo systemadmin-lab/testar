@@ -9,13 +9,13 @@ export default function ServiceContact() {
       {/* Header Section */}
       <div className="text-center mb-[381px]">
         <h2 
-            className="text-[80px] font-bold leading-[120%] tracking-[0.04em] text-[#B5B5B5] mb-4"
+            className="text-[36px] md:text-[56px] lg:text-[80px] font-bold leading-[120%] tracking-[0.04em] text-[#B5B5B5] mb-4"
             style={{ fontFamily: 'Aileron, sans-serif' }}
         >
           Get in Touch
         </h2>
         <p 
-            className="text-[32px] font-normal leading-[130%] text-[#B5B5B5]"
+            className="text-[18px] md:text-[24px] lg:text-[32px] font-normal leading-[130%] text-[#B5B5B5] px-4 lg:px-0"
             style={{ fontFamily: 'Anuphan, sans-serif' }}
         >
           Ready to start your growth journey? We'd love to hear from you.

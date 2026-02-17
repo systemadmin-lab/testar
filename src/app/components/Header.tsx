@@ -1,15 +1,40 @@
 "use client";
 
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
+const navItems = [
+  { label: "Home", href: "/home" },
+  { label: "Services", href: "/services" },
+  { label: "Work", href: "/work" },
+  { label: "About us", href: "/about-us" },
+  { label: "Contact Us", href: "/contact-us" },
+];
 
 export default function Header() {
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // check initial position
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header 
-      className="w-full h-[121px] flex items-center justify-between border-b border-white/5 bg-transparent backdrop-blur-md fixed top-0 left-0 z-50 box-border"
+      className={`w-full h-[121px] flex items-center justify-between fixed top-0 left-0 z-50 box-border transition-all duration-500 ${
+        scrolled 
+          ? "bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-lg" 
+          : "bg-transparent border-b border-transparent"
+      }`}
       style={{
         paddingTop: "35px",
         paddingBottom: "35px",
@@ -35,15 +60,9 @@ export default function Header() {
          />
       </div>
 
-      {/* Navigation - 373px margin from logo */}
-      <nav className="flex items-center gap-8 shrink-0" style={{ marginLeft: "373px" }}>
-        {[
-          { label: "Home", href: "/home" },
-          { label: "Services", href: "/services" },
-          { label: "Work", href: "/work" },
-          { label: "About us", href: "/about-us" },
-          { label: "Contact Us", href: "/contact-us" },
-        ].map((item) => {
+      {/* Navigation - 373px margin from logo (hidden on mobile) */}
+      <nav className="hidden lg:flex items-center gap-8 shrink-0" style={{ marginLeft: "373px" }}>
+        {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
             <Link 
@@ -61,11 +80,11 @@ export default function Header() {
         })}
       </nav>
 
-      {/* CTA Button - 373px margin from nav */}
+      {/* CTA Button - 373px margin from nav (hidden on mobile) */}
       <button 
   className="
     group
-    flex items-center justify-center
+    hidden lg:flex items-center justify-center
     font-medium text-sm
     shrink-0
     transition-all duration-500
@@ -95,6 +114,42 @@ export default function Header() {
     "
   />
 </button>
+
+      {/* Mobile Hamburger Button */}
+      <button 
+        className="lg:hidden flex items-center justify-center text-white"
+        onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label="Toggle menu"
+      >
+        {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+      </button>
+
+      {/* Mobile Overlay Menu */}
+      {mobileOpen && (
+        <div className="lg:hidden fixed inset-0 top-[80px] bg-black/95 backdrop-blur-md z-40 flex flex-col items-center pt-12 gap-8">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className={`text-2xl font-medium transition-colors ${
+                  isActive ? "text-[#DA1316]" : "text-white hover:text-white/80"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+          <button
+            className="mt-4 px-8 py-3 bg-[#DA1316] text-white rounded-lg font-medium text-lg"
+            onClick={() => setMobileOpen(false)}
+          >
+            Get Started
+          </button>
+        </div>
+      )}
 
     </header>
   );

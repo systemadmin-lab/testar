@@ -69,7 +69,7 @@ export default function OurPrinciples() {
         <div className="flex flex-col gap-6 flex-1 w-full">
             
             {/* Row 1: Big - Small */}
-            <div className="flex gap-6 w-full">
+            <div className="flex flex-col sm:flex-row gap-6 w-full">
                 {/* Item 0: Big */}
                 <BigCard item={principles[0]} />
                 {/* Item 1: Small */}
@@ -77,7 +77,7 @@ export default function OurPrinciples() {
             </div>
 
             {/* Row 2: Small - Big */}
-            <div className="flex gap-6 w-full">
+            <div className="flex flex-col sm:flex-row gap-6 w-full">
                 {/* Item 2: Small */}
                 <SmallCard item={principles[2]} />
                 {/* Item 3: Big */}

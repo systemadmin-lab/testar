@@ -37,7 +37,7 @@ export default function RootLayout({
       >
         <Header />
         {/* Add padding-top to account for fixed header height (121px) */}
-        <div className="px-[180px] pt-[121px]">
+        <div className="px-4 md:px-8 lg:px-[180px] pt-[80px] lg:pt-[121px]">
           {children}
         </div>
         <Footer />

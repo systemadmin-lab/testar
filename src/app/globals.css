@@ -72,3 +72,344 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-400 to-cyan-400;
   }
 }
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   These override inline style={{}} props on mobile/tablet.
+   Desktop (>1024px) is completely unaffected.
+   ============================================================ */
+
+/* --- TABLET: max-width 1024px --- */
+@media (max-width: 1024px) {
+  /* Header & Footer padding */
+  header {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  footer > div {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  /* Hero sections (Landing, AboutLanding, ServicesLanding) - full bleed override */
+  section > div[style*="calc(100%"],
+  div[style*="calc(100% + 360px)"] {
+    width: calc(100% + 64px) !important;
+    margin-left: -32px !important;
+    margin-right: -32px !important;
+  }
+
+  /* ReadyToElevate full bleed */
+  section > div[style*="marginLeft: '-180px'"],
+  section > div[style*="calc(100%"] {
+    width: calc(100% + 64px) !important;
+    margin-left: -32px !important;
+    margin-right: -32px !important;
+  }
+
+  /* Stats cards */
+  section > div > div[style*="353.25px"] {
+    width: 50% !important;
+  }
+
+  /* GrowthSolutions card height */
+  div[style*="height: '620px'"] {
+    height: 480px !important;
+  }
+
+  /* GrowthInsights cards */
+  div[style*="width: '504px'"][style*="height: '350px'"] {
+    width: 320px !important;
+    min-width: 320px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* OurProcess image container */
+  div[style*="width: '720px'"][style*="height: '400px'"] {
+    width: 100% !important;
+    max-width: 500px !important;
+    height: 300px !important;
+  }
+
+  /* CEOMessage image */
+  div[style*="width: '625px'"][style*="height: '735px'"] {
+    width: 100% !important;
+    max-width: 400px !important;
+    height: 480px !important;
+  }
+
+  /* CEOMessage content card */
+  div[style*="width: '832px'"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* CEOMessage section margin */
+  section[style*="marginTop: '250px'"] {
+    margin-top: 100px !important;
+    margin-bottom: 60px !important;
+  }
+
+  /* Milestone image & text width */
+  div[style*="width: '682px'"][style*="height: '518px'"] {
+    width: 100% !important;
+    max-width: 400px !important;
+    height: 350px !important;
+  }
+
+  /* Milestone text side */
+  .flex.flex-col.justify-center[class*="w-[682px]"] {
+    width: 100% !important;
+  }
+
+  /* OurPrinciples BigCard */
+  div[style*="width: '636px'"] {
+    width: 100% !important;
+    flex: 1 !important;
+  }
+
+  /* OurPrinciples SmallCard */
+  div[style*="width: '372px'"] {
+    width: 100% !important;
+    flex: 1 !important;
+  }
+
+  /* ServiceContact left card */
+  div[style*="width: '504px'"][style*="height: '830px'"] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 500px !important;
+  }
+
+  /* ServiceContact right card */
+  div[style*="width: '1032px'"][style*="height: '830px'"] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 600px !important;
+  }
+
+  /* ServiceContact header spacing */
+  div[style*="marginBottom: '381px'"],
+  .mb-\[381px\] {
+    margin-bottom: 120px !important;
+  }
+
+  /* ContactMap */
+  div[style*="width: '1560px'"][style*="height: '834px'"] {
+    width: 100% !important;
+    height: 500px !important;
+  }
+
+  /* Clients section margins */
+  section[style*="marginTop: '200px'"] {
+    margin-top: 80px !important;
+    margin-bottom: 80px !important;
+  }
+
+  /* FeaturedVideos/ClientTestimonials card size */
+  div[style*="width: '504px'"][style*="height: '456px'"] {
+    width: 360px !important;
+    min-width: 360px !important;
+    height: 400px !important;
+  }
+
+  div[style*="width: '504px'"][style*="height: '264px'"] {
+    width: 360px !important;
+    min-width: 360px !important;
+  }
+
+  /* Header nav margin */
+  nav[style*="marginLeft: '373px'"] {
+    margin-left: 40px !important;
+  }
+
+  /* CTA button margin */
+  button[style*="marginLeft: '373px'"] {
+    margin-left: 40px !important;
+  }
+
+  /* GrowthEngine section */
+  section > div[style*="height: '800px'"],
+  div[class*="h-[800px]"] {
+    height: auto !important;
+    min-height: 600px !important;
+  }
+}
+
+/* --- MOBILE: max-width 768px --- */
+@media (max-width: 768px) {
+  /* Header & Footer padding */
+  header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    height: 80px !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  footer > div {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Hero sections - full bleed */
+  section > div[style*="calc(100%"],
+  div[style*="calc(100% + 360px)"] {
+    width: calc(100% + 32px) !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+  }
+
+  /* ReadyToElevate */
+  section > div[style*="marginLeft: '-180px'"],
+  section > div[style*="calc(100%"] {
+    width: calc(100% + 32px) !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    height: auto !important;
+    min-height: 300px !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  /* Stats cards - 2 per row */
+  section > div > div[style*="353.25px"] {
+    width: 50% !important;
+    height: 100px !important;
+  }
+
+  /* GrowthSolutions card height */
+  div[style*="height: '620px'"] {
+    height: auto !important;
+    min-height: 350px !important;
+  }
+
+  /* GrowthInsights cards */
+  div[style*="width: '504px'"][style*="height: '350px'"] {
+    width: 280px !important;
+    min-width: 280px !important;
+    height: 280px !important;
+  }
+
+  /* OurProcess image container */
+  div[style*="width: '720px'"][style*="height: '400px'"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 250px !important;
+  }
+
+  /* CEOMessage image */
+  div[style*="width: '625px'"][style*="height: '735px'"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 350px !important;
+  }
+
+  /* CEOMessage content card */
+  div[style*="width: '832px'"] {
+    width: 100% !important;
+    padding: 20px !important;
+    font-size: 16px !important;
+  }
+
+  /* CEOMessage section margin */
+  section[style*="marginTop: '250px'"] {
+    margin-top: 60px !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* CEOMessage name card overlay */
+  div[style*="right: '-40px'"] {
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    position: relative !important;
+    margin-top: -40px !important;
+  }
+
+  /* Milestone image */
+  div[style*="width: '682px'"][style*="height: '518px'"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 250px !important;
+  }
+
+  /* OurPrinciples cards */
+  div[style*="width: '636px'"],
+  div[style*="width: '372px'"] {
+    width: 100% !important;
+    flex: 1 !important;
+  }
+
+  /* ServiceContact left card */
+  div[style*="width: '504px'"][style*="height: '830px'"] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px !important;
+  }
+
+  /* ServiceContact right card */
+  div[style*="width: '1032px'"][style*="height: '830px'"] {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* ServiceContact header spacing */
+  div[style*="marginBottom: '381px'"],
+  .mb-\[381px\] {
+    margin-bottom: 60px !important;
+  }
+
+  /* ContactMap */
+  div[style*="width: '1560px'"][style*="height: '834px'"] {
+    width: 100% !important;
+    height: 300px !important;
+  }
+
+  /* Clients section margins */
+  section[style*="marginTop: '200px'"] {
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
+  }
+
+  /* Clients card sizes */
+  div[style*="width: '240px'"][style*="height: '140px'"] {
+    width: 140px !important;
+    height: 80px !important;
+  }
+
+  /* FeaturedVideos card size */
+  div[style*="width: '504px'"][style*="height: '456px'"] {
+    width: 300px !important;
+    min-width: 300px !important;
+    height: 380px !important;
+  }
+
+  /* ClientTestimonials card size */
+  div[style*="width: '504px'"][style*="height: '264px'"] {
+    width: 300px !important;
+    min-width: 300px !important;
+    height: auto !important;
+    min-height: 240px !important;
+  }
+
+  /* Header nav & CTA - hidden on mobile (handled by component) */
+  nav[style*="marginLeft: '373px'"] {
+    margin-left: 0 !important;
+  }
+  button[style*="marginLeft: '373px'"] {
+    margin-left: 0 !important;
+  }
+
+  /* ServiceContact form grid - single column */
+  div[style*="width: '1032px'"] .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* GrowthEngine container height */
+  section > div[style*="height: '800px'"],
+  div[class*="h-[800px]"] {
+    height: auto !important;
+    min-height: auto !important;
+  }
+}

@@ -21,7 +21,7 @@ export default function HomePage() {
       <Clients />
       <OurProcess />
       <GrowthInsights />
-      <FeaturedVideos /> 
+      {/* <FeaturedVideos />  */}
       <ReadyToElevate />
     
       <ClientTestimonials />

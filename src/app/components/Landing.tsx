@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Landing() {
   return (
     <div 
-      className="relative flex flex-col items-center justify-center h-[940px] overflow-hidden"
+      className="relative flex flex-col items-center justify-center h-[580px] md:h-[820px] lg:h-[1061px] -mt-[80px] lg:-mt-[121px] pt-[80px] lg:pt-[121px] overflow-hidden"
       style={{
         width: 'calc(100% + 360px)', // 100% + left padding + right padding
         marginLeft: '-180px',
@@ -25,13 +25,13 @@ export default function Landing() {
       </div>
 
       <div className="relative z-10 w-full max-w-[1560px] mx-auto text-center space-y-12">
-        <h1 className="font-sans font-bold text-[80px] leading-[1.2] tracking-[0.04em] text-center text-white">
+        <h1 className="font-sans font-bold text-[32px] md:text-[56px] lg:text-[80px] leading-[1.2] tracking-[0.04em] text-center text-white">
           We Build<br /> 
           <span className="text-[#DA1316]">Digital </span> 
           Experiences
         </h1>
         
-        <p className="font-sans font-normal text-[32px] leading-[1.3] text-center text-white/90 max-w-[900px] mx-auto">
+        <p className="font-sans font-normal text-[18px] md:text-[24px] lg:text-[32px] leading-[1.3] text-center text-white/90 max-w-[900px] mx-auto px-4 lg:px-0">
           Transform your brand with cutting-edge technology, stunning motion design,
           and data-driven strategies that scale.
         </p>

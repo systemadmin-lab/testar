@@ -17,7 +17,7 @@ export default function AboutUsPage() {
       <Milestone />
       <OurPrinciples />
       <ReadyToElevate />
-      <FeaturedVideos />
+      {/* <FeaturedVideos /> */}
       <ClientTestimonials />
       <GrowthInsights />
       
