@@ -1,6 +1,22 @@
 import Image from "next/image";
 
-export default function Landing() {
+interface ServiceHeroProps {
+  tagline: string;
+  title: string;
+  highlightedWord: string;
+  description: string;
+  ctaText?: string;
+  backgroundImage?: string;
+}
+
+export default function ServiceHero({
+  tagline,
+  title,
+  highlightedWord,
+  description,
+  ctaText = "Start Project",
+  backgroundImage = "/servicehero.png"
+}: ServiceHeroProps) {
   return (
     <div 
       className="relative flex flex-col items-center justify-start h-[580px] md:h-[820px] lg:h-[940px] -mt-[80px] lg:-mt-[80px] pt-[80px] overflow-hidden"
@@ -13,8 +29,8 @@ export default function Landing() {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-[-2]">
         <Image
-          src="/home1.png"
-          alt="Hero Background"
+          src={backgroundImage}
+          alt="Service Hero Background"
           fill
           priority
           className="object-cover"
@@ -22,10 +38,10 @@ export default function Landing() {
         />
       </div>
 
-      {/* Dark Overlay - reduced opacity for better image visibility */}
-      <div className="absolute inset-0 bg-[rgba(4,4,4,0.4)] z-[-1]" />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-[rgba(4,4,4,0.6)] z-[-1]" />
 
-      {/* Main Content - positioned exactly as Figma specifies */}
+      {/* Main Content */}
       <div className="relative z-10 flex flex-col gap-[40px] items-center w-full max-w-[1100px] mx-auto" style={{ paddingTop: '128px' }}>
         {/* Tagline */}
         <p 
@@ -36,7 +52,7 @@ export default function Landing() {
             fontWeight: 400,
           }}
         >
-          GLOBAL CREATIVE AGENCY
+          {tagline}
         </p>
 
         {/* Main heading and CTA container */}
@@ -44,19 +60,15 @@ export default function Landing() {
           {/* Heading and subheading */}
           <div className="flex flex-col gap-[48px] items-center text-center text-[#B5B5B5] w-full">
             {/* Main Heading */}
-            <div className="font-bold text-[32px] md:text-[56px] lg:text-[80px] leading-[1.2] tracking-[3.2px]">
-              <p className="mb-0">We Build</p>
-              <p className="mb-0">
-                <span className="text-[#D62828]">Digital</span>
-                {' Experiences'}
-              </p>
-            </div>
+            <p className="font-bold text-[32px] md:text-[56px] lg:text-[80px] leading-[1.2] tracking-[3.2px] mb-0">
+              {title} <span className="text-[#D62828]">{highlightedWord}</span>
+            </p>
 
             {/* Subheading */}
-            <div className="font-normal text-[18px] md:text-[24px] lg:text-[32px] leading-[1.3]" style={{ fontFamily: 'Anuphan, sans-serif' }}>
-              <p className="mb-0">Transform your brand with cutting-edge technology, stunning motion design,</p>
-              <p className="mb-0">and data-driven strategies that scale.</p>
-            </div>
+            <p className="font-normal text-[18px] md:text-[24px] lg:text-[32px] leading-[1.3] max-w-[900px] mx-auto" 
+               style={{ fontFamily: 'Anuphan, sans-serif' }}>
+              {description}
+            </p>
           </div>
 
           {/* CTA Button */}
@@ -70,14 +82,14 @@ export default function Landing() {
               className="relative z-10 text-[#DA1316] group-hover:text-white transition-colors duration-300 font-normal text-[18px] leading-[1.2]"
               style={{ fontFamily: 'Anuphan, sans-serif' }}
             >
-              Explore Our Work
+              {ctaText}
             </span>
           </button>
         </div>
       </div>
 
       {/* Down Arrow */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10" style={{ top: '744px' }}>
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10" style={{ top: '654px' }}>
         <svg 
           width="20" 
           height="123" 

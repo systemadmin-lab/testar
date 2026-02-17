@@ -1,6 +1,5 @@
 import Clients from "../components/Clients";
 import ClientTestimonials from "../components/ClientTestimonials";
-import FeaturedVideos from "../components/FeaturedVideos";
 import FeaturedWork from "../components/FeaturedWork";
 import GrowthEngine from "../components/GrowthEngine";
 import GrowthInsights from "../components/GrowthInsights";

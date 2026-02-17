@@ -7,20 +7,7 @@ export default function ServiceContact() {
   return (
     <section className="w-full py-24 flex flex-col items-center bg-transparent">
       {/* Header Section */}
-      <div className="text-center mb-[381px]">
-        <h2 
-            className="text-[36px] md:text-[56px] lg:text-[80px] font-bold leading-[120%] tracking-[0.04em] text-[#B5B5B5] mb-4"
-            style={{ fontFamily: 'Aileron, sans-serif' }}
-        >
-          Get in Touch
-        </h2>
-        <p 
-            className="text-[18px] md:text-[24px] lg:text-[32px] font-normal leading-[130%] text-[#B5B5B5] px-4 lg:px-0"
-            style={{ fontFamily: 'Anuphan, sans-serif' }}
-        >
-          Ready to start your growth journey? We'd love to hear from you.
-        </p>
-      </div>
+{/* Header removed and moved to UnifiedHero */}
 
       <div className="w-full max-w-[1560px] flex flex-col lg:flex-row gap-[24px]">
         {/* Left Card: Contact Info */}

@@ -90,18 +90,7 @@ function Counter({ value, prefix = "", suffix = "" }: { value: number; prefix?: 
 export default function FeaturedWork() {
   return (
     <section className="w-full py-24 flex flex-col items-center">
-      <div className="w-full max-w-[1560px] mb-20">
-        <h2 
-            className="text-[40px] font-semibold leading-[1.2] mb-6"
-            style={{ fontFamily: 'Aileron, sans-serif' }}
-        >
-          Featured Work
-        </h2>
-        <div className="w-[100px] h-1 bg-[#B59F7A] mb-8" />
-        <p className="text-muted-foreground text-lg">
-          Selected case studies from our portfolio of global partnerships.
-        </p>
-      </div>
+{/* Header removed and moved to UnifiedHero */}
 
       <div className="flex flex-col gap-24 w-full max-w-[1560px]">
         {projects.map((project, index) => (
